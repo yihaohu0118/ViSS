@@ -1,5 +1,7 @@
 <div align="center">
 
+<a href="https://yihaohu0118.github.io/ViSS/"><img src="site/assets/brand/cover.gif" alt="ViSS learns visible-state distinctions; TVS selects recent, event and compact-history views on demand while keeping the trained model fixed." width="100%"></a>
+
 # ViSS
 ### Supervising the Visible State: Separating Representation from View Selection in Streaming Video
 
@@ -15,6 +17,9 @@ Mingda WAN, Yiwen Zhao, Yutong Li, Yuchen Mao, Tao Lin†
 [Evaluation](docs/EVALUATION.md) · [Citation](#citation)
 
 </div>
+
+<p align="center"><sub>Conceptual method animation · <a href="site/assets/brand/cover.png">Static poster</a> · <a href="https://yihaohu0118.github.io/ViSS/assets/brand/cover.mp4">12-second video</a> · <a href="https://yihaohu0118.github.io/ViSS/#demo">Interactive paper case</a></sub></p>
+
 
 <p align="center"><img src="site/assets/teaser.png" alt="ViSS supervises visible-state distinctions; TVS adapts causal evidence access." width="100%"></p>
 
