@@ -1,0 +1,74 @@
+{
+  "format": "iclr_video.locked_evaluation_protocol.v1",
+  "protocol_id": "recent4_full_v1",
+  "status": "template",
+  "applies_to": "all baseline and candidate checkpoints",
+  "inference": {
+    "causal_prefix_only": true,
+    "sampling_fps": 1.0,
+    "context_policy": "recent_n",
+    "recent_frames": 4,
+    "timestamp_rule": "match the SimpleStream release: decode a four-second half-open causal prefix window [max(0,t-4),t) at nominal 1 FPS and retain exactly four independently encoded image frames; only prefixes shorter than two raw frames repeat frame zero",
+    "allow_future_frames": false,
+    "allow_global_frames": false,
+    "allow_extra_frame_inspection": false,
+    "allow_persistent_visual_or_text_memory": false,
+    "visual_input_mode": "four independent image frames using qwen-vl-utils fetch_video (image_patch_size=14), never Qwen video tokens",
+    "processor_contract": {
+      "preprocessor_config_sha256": "",
+      "image_processor_type": "Qwen2VLImageProcessorFast",
+      "patch_size": 16,
+      "merge_size": 2,
+      "temporal_patch_size": 2,
+      "shortest_edge": 65536,
+      "longest_edge": 16777216,
+      "reference_visual_tokens_per_frame": 576,
+      "reason": "Bind the processor used by your evaluation before inference."
+    },
+    "prompt_source": "StreamingBench SimpleStream release MCQ template; OVO backward/realtime SimpleStream release one-letter template; OVO forward frozen official task wrapper; no system message",
+    "decode": {
+      "do_sample": false,
+      "temperature": 0.0
+    }
+  },
+  "benchmarks": {
+    "streamingbench": {
+      "scope": "Real-Time full",
+      "export": "data/streamingbench/queries.jsonl",
+      "export_sha256": "",
+      "expected_queries": 2495,
+      "expected_groups": {
+        "real_time_visual": 2495
+      },
+      "primary_metric": "official Real-Time accuracy"
+    },
+    "ovo": {
+      "scope": "all 12 tasks: Real-Time, Backward, and Forward",
+      "export": "data/ovo/queries.jsonl",
+      "export_sha256": "",
+      "expected_queries": 3035,
+      "expected_tasks": {
+        "ACR": 109,
+        "ASI": 148,
+        "ATR": 116,
+        "CRR": 240,
+        "EPM": 297,
+        "FPD": 101,
+        "HLD": 186,
+        "OCR": 149,
+        "OJR": 184,
+        "REC": 698,
+        "SSR": 629,
+        "STU": 178
+      },
+      "primary_metric": "official Total Avg",
+      "secondary_metrics": [
+        "micro Overall",
+        "Real-Time Avg",
+        "Backward Avg",
+        "Forward Avg",
+        "RT/BT Avg"
+      ]
+    }
+  }
+}

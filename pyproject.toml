@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "viss-code"
+version = "0.3.1"
+description = "Visible-State Supervision and Test-Time Causal View Search"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = ["numpy>=1.24,<3", "Pillow>=10,<12"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10", "torch>=2.7,<3"]
+inference = [
+  "torch==2.7.0",
+  "transformers==4.57.3",
+  "accelerate==1.8.1",
+  "qwen-vl-utils>=0.0.11,<0.1",
+  "decord==0.6.0",
+]
+training = ["deepspeed>=0.16,<0.18"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["viss_core*", "experiments*", "data_pipeline*", "scripts*"]
+namespaces = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

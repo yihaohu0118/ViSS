@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use ViSS, please cite the accompanying manuscript."
+type: software
+title: "ViSS: Visible-State Supervision and Test-Time Causal View Search"
+version: 0.3.1
+license: Apache-2.0
+repository-code: "https://github.com/yihaohu0118/ViSS"
+url: "https://yihaohu0118.github.io/ViSS/"
+authors:
+  - given-names: "Yihao"
+    family-names: "Hu"
+  - given-names: "Pan"
+    family-names: "Wang"
+  - given-names: "Yitong"
+    family-names: "Lin"
+  - given-names: "Zhihao"
+    family-names: "Wen"
+  - given-names: "Deyuan"
+    family-names: "Liu"
+  - given-names: "Hang"
+    family-names: "Wang"
+  - given-names: "Mingda"
+    family-names: "Wan"
+  - given-names: "Yiwen"
+    family-names: "Zhao"
+  - given-names: "Yutong"
+    family-names: "Li"
+  - given-names: "Yuchen"
+    family-names: "Mao"
+  - given-names: "Tao"
+    family-names: "Lin"

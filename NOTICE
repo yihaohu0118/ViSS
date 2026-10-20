@@ -1,0 +1,16 @@
+ViSS: Visible-State Supervision and Test-Time Causal View Search
+
+This source release is derived from the ViSS research repository and carries
+that repository's Apache License 2.0, supplied in LICENSE.
+
+The code uses external libraries including PyTorch, Transformers, Accelerate,
+DeepSpeed, qwen-vl-utils, Decord, NumPy, and Pillow. Those projects retain
+their own licenses. Qwen3-VL model weights, training media, benchmark data,
+and official benchmark scorers are not redistributed in this archive.
+
+Evaluation adapters preserve the StreamingBench/SimpleStream prompt interface
+and OVO-Bench task interfaces described in the evaluation protocol.
+Users must obtain the corresponding resources under their original terms.
+
+The README organization takes inspiration from the OneStreamer repository.
+No OneStreamer implementation, model weights, data, or figures are included.
